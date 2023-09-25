@@ -21,7 +21,6 @@ const options = {
   onClose(selectedDates) {
     const currentDate = new Date();
     if (selectedDates[0].getTime() - currentDate.getTime() > 0) {
-      console.log('Ніхуя себе');
       refs.btnStartTimer.disabled = false;
     } else {
       refs.btnStartTimer.disabled = true;
