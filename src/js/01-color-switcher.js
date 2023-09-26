@@ -11,6 +11,7 @@ console.log(refs.btnStop);
 refs.btnStart.addEventListener('click', changeColor);
 refs.btnStop.addEventListener('click', onBtnStop);
 
+refs.btnStop.disabled = true;
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
@@ -25,10 +26,12 @@ function changeColor() {
   timerInteval = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
     refs.btnStart.disabled = true;
+    refs.btnStop.disabled = false;
   }, 1000);
 }
 
 function onBtnStop() {
   clearInterval(timerInteval);
   refs.btnStart.disabled = false;
+  refs.btnStop.disabled = true;
 }
